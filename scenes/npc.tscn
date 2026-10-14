@@ -42,7 +42,7 @@ animations = [{
 radius = 31.571426
 height = 86.285706
 
-[node name="NPC" type="Node2D" unique_id=1070723878]
+[node name="NPC" type="Node2D" unique_id=81617126]
 scale = Vector2(0.7, 0.7)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1215978376]
