@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Guardianes del cristal"
-run/main_scene="uid://bs3r2730ibpcy"
+run/main_scene="uid://d4lw56lkgormu"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
