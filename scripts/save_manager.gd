@@ -1,6 +1,5 @@
 extends Node
 const SAVE_PATH: String = "user://savegame.json"
-
 var pending_data: Dictionary = {}
 
 func save_game(
@@ -57,6 +56,7 @@ func load_game() -> void:
 	pending_data = data
 	get_tree().paused = false
 	get_tree().change_scene_to_file.call_deferred(level_path)
+
 func apply_save_data(player: CharacterBody2D) -> void:
 	if pending_data.is_empty():
 		return
