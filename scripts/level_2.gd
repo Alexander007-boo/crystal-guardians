@@ -10,12 +10,17 @@ var total_crystals: int = 0
 
 
 func _ready() -> void:
-	QuestManager.reset_quest()
 	var crystals := $crystals.get_children()
 
 	total_crystals = crystals.size()
 	player.health_changed.connect(game_hud.update_health)
 	game_hud.update_health(player.health, player.max_health)
+	
+	# Primero preparar el estado de misión del nivel.
+	QuestManager.reset_quest()
+
+	# Después restaurar la partida, si existe.
+	restore_saved_game.call_deferred()
 
 
 func _on_crystal_collected() -> void:
@@ -30,3 +35,5 @@ func update_crystal_label() -> void:
 		crystals_collected,
 		total_crystals
 	]
+func restore_saved_game() -> void:
+	SaveManager.apply_saved_data($Player)
